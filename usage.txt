@@ -1,0 +1,20 @@
+timesum [-v|--version] [-h|--help] [HH:MM-HH:MM|HH:MM|HH.ff]...
+
+This tool takes a number of arguments that represent a quantity
+of time.  Each of the arguments is then summed as minutes and
+then the final quantity of time is rendered as the result in
+the format HH:MM.
+
+Arguments can be of one of the following forms;
+
+range    : 07:30-10:34
+absolute : 01:30
+decimal  : 1.5
+
+Example;
+
+$ timesum 07:30-10:30 1:30 1.25
+05:45
+
+All hours are in 24 hour format; there is no accomodation for AM
+or PM.
