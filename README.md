@@ -18,6 +18,18 @@ It also handles items with an absolute HH:MM or a fractional value;
 05:45
 ```
 
+This is calculated as;
+
+|Input Expression|Equates To|
+|---|---|
+|`07:30-10:30`|3.00|
+|`1:30`|1.50|
+|`1.25`|1.25|
+|---|---|
+| |**5.75 (05:45)** |
+
+The difference between two times always results in the absolute difference.  This way both `07:30-10:30` and `10:30-07:30` yields 3.0.
+
 ## Building
 
 This tool should build on most UNIX systems with a C compiler and make.  To build, just issue the `make` command and you should end up with a binary `timesum`.
