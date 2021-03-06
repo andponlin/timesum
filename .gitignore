@@ -1,5 +1,6 @@
 .*
 usage.h
+usage.go
 timesum
 timesum.o
 

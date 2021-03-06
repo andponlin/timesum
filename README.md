@@ -32,4 +32,20 @@ The difference between two times always results in the absolute difference.  Thi
 
 ## Building
 
-This tool should build on most UNIX systems with a C compiler and make.  To build, just issue the `make` command and you should end up with a binary `timesum`.
+There is a C as well as golang implementation of this tool.  I wrote it in C and then wanted to try golang.  You will need the `make` build tool to build the software.
+ 
+### C
+
+This tool should build on most UNIX systems with a C compiler.
+
+### Golang
+
+You will need the `go` compiler installed and the `testify` package installed;
+
+```
+go get github.com/stretchr/testify
+```
+
+### Build
+
+To build, just issue the `make` command and you should end up with a binary `timesum` and a binary `timesumgo`.

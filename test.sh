@@ -1,14 +1,17 @@
 #!/bin/sh
 # =============================================================================
-# Copyright 2020, Andrew Lindesay <apl@lindesay.co.nz>.
+# Copyright 2020-2021, Andrew Lindesay <apl@lindesay.co.nz>.
 # All rights reserved. Distributed under the terms of the MIT License.
 # =============================================================================
 
+# This script will check a `timesum` build from the binary.
+
+testbinary=${1}
 testreturn=0
 
 runAndFail() {
   input=$1
-  ./timesum ${input}
+  ./${testbinary} ${input}
 
   if [ $? -eq 0 ]; then
     echo "! expected failure when running [${input}]"
@@ -25,7 +28,7 @@ runAndFail() {
 runAndCheck() {
   input=$1
   expected=$2
-  actual=$(./timesum ${input})
+  actual=$(./${testbinary} ${input})
 
   if [ $? != 0 ]; then
     echo "! failed to run [${input}]"
@@ -44,6 +47,8 @@ runAndCheck() {
 
   return
 }
+
+echo "testing binary [${testbinary}]"
 
 result=0
 
